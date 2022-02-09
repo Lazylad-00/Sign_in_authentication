@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "730504518717",
+    "project_id": "sign-in-system-28847",
+    "storage_bucket": "sign-in-system-28847.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:730504518717:android:af36379c6154b79c36de54",
+        "android_client_info": {
+          "package_name": "com.lazylad.sign_in_system"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "730504518717-5rjia82idqu95enbb2nsep1tjm6p99tk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDFnw8Xqq1T0DJRD6oHgRtgEg65GbHExX0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "730504518717-5rjia82idqu95enbb2nsep1tjm6p99tk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
