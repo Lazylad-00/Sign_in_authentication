@@ -1,13 +1,23 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:provider/provider.dart';
 import 'package:sign_in_system/models/current_user.dart';
+import 'package:sign_in_system/models/user_model.dart';
+import 'package:sign_in_system/screens/home/home.dart';
 import 'package:sign_in_system/screens/wrapper.dart';
 import 'package:sign_in_system/services/auth_method_file.dart';
 
+import 'firebase_config.dart';
+
 Future<void> main() async {
+  // bool shouldUseFirestoreEmulator = false;
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  await Firebase.initializeApp(options: DefaultFirebaseConfig.platformOptions);
+
+  // if (shouldUseFirestoreEmulator) {
+  //   FirebaseFirestore.instance.useFirestoreEmulator('localhost', 8080);
+  // }
   runApp(const MyApp());
 }
 
@@ -22,7 +32,8 @@ class MyApp extends StatelessWidget {
       value: AuthService().user,
       child: const MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: Wrapper(),
+        home: Home(),
+        //  Wrapper(),
       ),
     );
   }
