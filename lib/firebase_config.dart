@@ -32,10 +32,10 @@ class DefaultFirebaseConfig {
     } else {
       // Android
       return const FirebaseOptions(
-        appId: '1:448618578101:android:3ad281c0067ccf97ac3efc',
-        apiKey: 'AIzaSyCuu4tbv9CwwTudNOweMNstzZHIDBhgJxA',
-        projectId: 'react-native-firebase-testing',
-        messagingSenderId: '448618578101',
+        appId: '1:730504518717:android:af36379c6154b79c36de54',
+        apiKey: 'AIzaSyDFnw8Xqq1T0DJRD6oHgRtgEg65GbHExX0',
+        projectId: 'sign-in-system-28847',
+        messagingSenderId: '730504518717',
       );
     }
   }

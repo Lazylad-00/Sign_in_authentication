@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:sign_in_system/design/constant.dart';
 import 'package:sign_in_system/design/loading.dart';
+import 'package:sign_in_system/screens/extrapages/registration.dart';
+import 'package:sign_in_system/screens/home/home.dart';
 import 'package:sign_in_system/services/auth_method_file.dart';
 
 class Register extends StatefulWidget {
@@ -19,6 +21,7 @@ class _RegisterState extends State<Register> {
   String password = '';
   String error = '';
   bool loading = false;
+  String name = '';
 
   @override
   Widget build(BuildContext context) {
@@ -99,6 +102,11 @@ class _RegisterState extends State<Register> {
                                     dynamic result =
                                         await _auth.registerUsingCredentials(
                                             email, password);
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                const Registration()));
                                     if (result == null) {
                                       setState(() {
                                         error = "Couldn't register.";

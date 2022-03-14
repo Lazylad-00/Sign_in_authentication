@@ -4,12 +4,12 @@ import 'package:sign_in_system/models/current_user.dart';
 class AuthService {
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
-  CurrentUser? _userFromFirebase(User? user) {
+  CurrentUser? userFromFirebase(User? user) {
     return user != null ? CurrentUser(uid: user.uid) : null;
   }
 
   Stream<CurrentUser?> get user {
-    return _auth.authStateChanges().map(_userFromFirebase);
+    return _auth.authStateChanges().map(userFromFirebase);
   }
 
   Future signInUsingCredentials(String email, String password) async {
@@ -17,7 +17,7 @@ class AuthService {
       UserCredential result = await _auth.signInWithEmailAndPassword(
           email: email, password: password);
       User user = result.user!;
-      return _userFromFirebase(user);
+      return userFromFirebase(user);
     } catch (e) {
       Null;
       print(e.toString());
@@ -29,7 +29,7 @@ class AuthService {
       UserCredential result = await _auth.createUserWithEmailAndPassword(
           email: email, password: password);
       User user = result.user!;
-      return _userFromFirebase(user);
+      return userFromFirebase(user);
     } catch (e) {
       print(e.toString());
     }
